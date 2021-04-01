@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./custom.scss";
+import ProductDetailMobile from "./Components/ProductDetailMobile";
+// import ProductDetailDesktop from "./Components/ProductDetailDesktop";
+import ProductView from "./Components/ProductView";
+import Grid from "@material-ui/core/Grid";
+import Topbar from "./Components/Topbar";
+import LaptopProduct from "./Components/LaptopProduct";
+import Products from "./Components/Products";
+import Admin from "./Components/Admin/Admin";
+import ShowCarosel from "./Components/ShowCarosel";
+import { Redirect, Route, Switch } from "react-router-dom";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Switch>
+        <Route exact path="/">
+          <Topbar />
+          <ShowCarosel />
+        </Route>
+        <Route exact path="/productDetail">
+          <ProductDetailMobile />
+        </Route>
+        <Route exact path="/admin">
+          <Admin />
+        </Route>
+        <Route exact path="/allProduct">
+          <Products />
+        </Route>
+      </Switch>
+      {/* <Admin /> */}
+    </>
   );
-}
+};
 
 export default App;
