@@ -1,7 +1,6 @@
 import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-// import image from "../images/product-min-01.jpg";
 import ProductView from "./ProductView";
 import { Grid } from "@material-ui/core";
 

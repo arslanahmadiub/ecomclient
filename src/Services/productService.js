@@ -7,6 +7,9 @@ const multiFileUploadUrl = apiEndPoint + "multiUpload";
 const productDeleteUrl = apiEndPoint + "productDelete";
 const productUpdateUrl = apiEndPoint + "productUpdate";
 
+const saveUserUrl = apiEndPoint + "signup";
+const loginUserUrl = apiEndPoint + "signin";
+
 export async function createProduct(data) {
   return await axios({
     method: "post",
@@ -31,4 +34,15 @@ export async function deleteProduct(productId) {
 
 export async function updateProduct(data) {
   return await axios.post(productUpdateUrl, data);
+}
+
+export async function saveUser({ email, password }) {
+  return axios.post(saveUserUrl, {
+    email: email,
+    password: password,
+  });
+}
+
+export async function login(email, password) {
+  return await axios.post(loginUserUrl, { email, password });
 }

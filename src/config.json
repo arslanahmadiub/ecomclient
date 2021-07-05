@@ -1,3 +1,3 @@
 {
-  "apiEndPoint": "http://localhost:5000/"
+  "apiEndPoint": "https://demo-client-ecom.herokuapp.com/"
 }
